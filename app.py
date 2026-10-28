@@ -1,5 +1,5 @@
 
-
+import os
 from flask import (
     Flask, render_template, request,
     redirect, url_for, session, flash
@@ -10,7 +10,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = "change-this-to-a-random-secret-key"
 
-DATABASE = "kayin.db"
+
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+DATABASE = os.path.join(BASE_DIR, "kayin.db")
 
 
 # Connect to Database
