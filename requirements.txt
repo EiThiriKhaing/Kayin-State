@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
-flask
-gunicorn
-=======
+
 flask
 gunicorn
 
->>>>>>> Stashed changes
+
