@@ -17,9 +17,21 @@ DATABASE = os.path.join(BASE_DIR, "kayin.db")
 
 
 # Connect to Database
+# Connect to Database
 def get_db():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
+
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL UNIQUE,
+            password TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+
     return conn
 
 
