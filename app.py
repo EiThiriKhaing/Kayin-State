@@ -50,6 +50,13 @@ def init_db():
 
 # Initialize Database
 init_db()
+# Initialize Database
+
+
+# Ensure database table exists before each request
+@app.before_request
+def ensure_database():
+    init_db()
 
 # Home Page
 @app.route("/")
