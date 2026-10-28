@@ -33,8 +33,8 @@ def init_db():
         """)
 
 
-
- 
+# Initialize Database
+init_db()
 
 # Home Page
 @app.route("/")
